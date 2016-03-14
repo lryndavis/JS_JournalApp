@@ -8,11 +8,17 @@ Journal.prototype.fullEntry = function() {
   return this.journalTitle + " " + this.journalEntry;
 };
 
+
 Journal.prototype.numOfWords = function(journalEntry) {
   var inputEntry = this.journalEntry;
   var inputArr = inputEntry.split(" ");
   var numWords = inputArr.length;
   return numWords;
+};
+
+Journal.prototype.timeOfEntry = function(){
+  var now = new moment();
+  return now;
 };
 
 module.exports = Journal;
@@ -37,7 +43,7 @@ $(function(){
     $(".show-entries h3").text(newEntry.journalTitle);
     $(".the-entry").text(newEntry.journalEntry);
     $(".number-of-words").text(newEntry.numOfWords());
-
+    $('.time-of-entry').text(newEntry.timeOfEntry());
 
     });
   });
