@@ -17,11 +17,6 @@ Journal.prototype.numOfWords = function(journalEntry) {
   return numWords;
 };
 
-// Journal.prototype.timeOfEntry = function(){
-//   var now = moment().calendar();
-//   return now;
-// };
-
 module.exports = Journal;
 
 },{}],2:[function(require,module,exports){
@@ -46,6 +41,19 @@ $(function(){
     $(".number-of-words").text(newEntry.numOfWords());
     $('.time-of-entry').text(newEntry.dateOfEntry);
 
+    });
+  });
+});
+
+var apiKey = "379107d28ee00f8ff3073b943d3f5a64";
+
+$(document).ready(function(){
+  $('#weatherLocation').click(function(){
+    var city = $('#location').val();
+    $('#location').val("");
+    $('.showWeather').text("The city you have chosen is " + city + ".");
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey, function(response) {
+      console.log(response);
     });
   });
 });
