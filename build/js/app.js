@@ -8,6 +8,13 @@ Journal.prototype.fullEntry = function() {
   return this.journalTitle + " " + this.journalEntry;
 };
 
+Journal.prototype.numOfWords = function(journalEntry) {
+  var inputEntry = this.journalEntry;
+  var inputArr = inputEntry.split(" ");
+  var numWords = inputArr.length;
+  return numWords;
+};
+
 module.exports = Journal;
 
 },{}],2:[function(require,module,exports){
@@ -29,7 +36,7 @@ $(function(){
     $(".show-entries").show();
     $(".show-entries h3").text(newEntry.journalTitle);
     $(".the-entry").text(newEntry.journalEntry);
-
+    $(".number-of-words").text(newEntry.numOfWords());
 
 
     });

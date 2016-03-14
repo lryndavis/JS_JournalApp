@@ -16,7 +16,7 @@ $(function(){
     $(".show-entries").show();
     $(".show-entries h3").text(newEntry.journalTitle);
     $(".the-entry").text(newEntry.journalEntry);
-
+    $(".number-of-words").text(newEntry.numOfWords());
 
 
     });
