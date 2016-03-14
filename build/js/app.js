@@ -2,6 +2,7 @@
 function Journal(journalTitle, journalEntry) {
   this.journalTitle = journalTitle;
   this.journalEntry = journalEntry;
+  this.dateOfEntry = moment().calendar();
 }
 
 Journal.prototype.fullEntry = function() {
@@ -16,10 +17,10 @@ Journal.prototype.numOfWords = function(journalEntry) {
   return numWords;
 };
 
-Journal.prototype.timeOfEntry = function(){
-  var now = new moment();
-  return now;
-};
+// Journal.prototype.timeOfEntry = function(){
+//   var now = moment().calendar();
+//   return now;
+// };
 
 module.exports = Journal;
 
@@ -43,7 +44,7 @@ $(function(){
     $(".show-entries h3").text(newEntry.journalTitle);
     $(".the-entry").text(newEntry.journalEntry);
     $(".number-of-words").text(newEntry.numOfWords());
-    $('.time-of-entry').text(newEntry.timeOfEntry());
+    $('.time-of-entry').text(newEntry.dateOfEntry);
 
     });
   });

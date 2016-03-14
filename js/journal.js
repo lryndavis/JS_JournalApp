@@ -1,6 +1,7 @@
 function Journal(journalTitle, journalEntry) {
   this.journalTitle = journalTitle;
   this.journalEntry = journalEntry;
+  this.dateOfEntry = moment().calendar();
 }
 
 Journal.prototype.fullEntry = function() {
@@ -13,11 +14,6 @@ Journal.prototype.numOfWords = function(journalEntry) {
   var inputArr = inputEntry.split(" ");
   var numWords = inputArr.length;
   return numWords;
-};
-
-Journal.prototype.timeOfEntry = function(){
-  var now = new moment();
-  return now;
 };
 
 module.exports = Journal;
