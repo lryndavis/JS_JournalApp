@@ -8,8 +8,6 @@ $(function(){
     var entryInput = $("#entry").val();
     var newEntry = new Journal(titleInput, entryInput);
 
-
-
     $("ul#entries").append("<li><span class='single-entry'>" + newEntry.journalTitle + "</span></li>");
 
     $(".single-entry").last().click(function(){
@@ -18,7 +16,6 @@ $(function(){
     $(".the-entry").text(newEntry.journalEntry);
     $(".number-of-words").text(newEntry.numOfWords());
     $('.time-of-entry').text(newEntry.dateOfEntry);
-
     });
   });
 });
